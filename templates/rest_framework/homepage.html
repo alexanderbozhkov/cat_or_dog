@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row content">
+    <div class="col-sm-3 sidenav">
+        <h4>Image Recognition Type</h4>
+        <ul class="nav nav-pills nav-stacked" id="sidenav-buttons">
+            <li class="nav-li"><a href="/section1">TEST HOME PAGE</a></li>
+            <li class="nav-li"><a href="/section2">Upload Image</a></li>
+            <li class="nav-li"><a href="/section3">Draw Image</a></li>
+        </ul>
+    </div>
+    {% if is_homepage %}
+        {% include "includes/instructions.html" %}
+    {% elif is_upload_image %}
+        {% include "includes/upload_image.html" %}
+    {% elif is_draw_image %}
+        {% include "includes/draw_image.html" %}
+    {% endif %}
+</div>
+<script src="{{ static('./js/sidenav-buttons.js')}}"></script>
+{% endblock %}
